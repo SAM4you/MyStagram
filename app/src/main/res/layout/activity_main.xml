@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentEnd="true">
 
-    <TextView
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDescription"
+        android:hint="Your post"
+        android:layout_margin="30dp"
+        android:padding="10dp"/>
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Take a Picture"
+        android:id="@+id/btnCam"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="120dp"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:id="@+id/ivCam"
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPost"
+        android:layout_marginRight="130dp"
+        android:layout_marginLeft="150dp"
+        android:text="Post"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
