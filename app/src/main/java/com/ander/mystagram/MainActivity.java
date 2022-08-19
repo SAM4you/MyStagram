@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
 
     private EditText etDescription;
-    private Button btnCam;
-    private ImageView ivCam;
+   // private Button btnCam;
+   // private ImageView ivCam;
     private Button btnPost;
 
     @Override
@@ -31,16 +32,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         etDescription = findViewById(R.id.etDescription);
-        btnCam = findViewById(R.id.btnCam);
-        ivCam =  findViewById(R.id.ivCam);
+        //btnCam = findViewById(R.id.btnCam);
+        //ivCam =  findViewById(R.id.ivCam);
         btnPost = findViewById(R.id.btnPost);
 
         queryPosts();
+
+       /* btnPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }*/
+
+
+
     }
 
     private void queryPosts() {
         // Specify which class to query
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
+        query.include(Post.KEY_USER);
         // Specify the object id
         query.findInBackground(new FindCallback<Post>() {
             @Override
@@ -49,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "Issue with getting posts", e);
                     return;
                 } for (Post post : posts) {
-                    Log.i(TAG, "Post: "+ post.getDescription());
+                    Log.i(TAG, "Post: "+ post.getDescription() + ", username: " + post.getUser().getUsername());
                 }
 
             }
