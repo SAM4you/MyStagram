@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/SAM4you/MyStagram/blob/main/MyStagramWalkthrough.gif' title='Video Walkthrough' width='360' alt='Video Walkthrough' /> <img src='https://github.com/SAM4you/MyStagram/blob/main/MyStagramWalkthrough%20-1.gif' title='Video Walkthrough' width='305' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -42,7 +42,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2022] [Ander M. Saint-Louis]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
