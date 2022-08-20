@@ -5,6 +5,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -17,9 +18,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -36,10 +41,15 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE =42;
 
-    private EditText etDescription;
-    private Button btnCam;
-    private ImageView ivCam;
-    private Button btnPost;
+    EditText etDescription;
+    ImageButton btnCam;
+    ImageView ivCam;
+    Button btnPost;
+
+    RelativeLayout bottom;
+    ImageButton ibHome;
+    ImageButton ibCompose;
+    ImageButton ibProfile;
     private File photoFile;
     public String photoFileName = "photo.jpg";
 
@@ -48,11 +58,36 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+
+
 
         etDescription = findViewById(R.id.etDescription);
         btnCam = findViewById(R.id.btnCam);
         ivCam =  findViewById(R.id.ivCam);
         btnPost = findViewById(R.id.btnPost);
+
+        ibHome = findViewById(R.id.ibHome);
+        ibProfile = findViewById(R.id.ibProfile);
+
+
+
+        ibHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG,"Navigating to FeedActivity");
+                startActivity(new Intent(MainActivity.this,FeedActivity.class));
+            }
+        });
+        ibProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Sorry, this option is not yet fully implemented", Toast.LENGTH_SHORT).show();
+                Log.i(TAG,"Navigating to ProfileActivity");
+                startActivity(new Intent(MainActivity.this,ProfileActivity.class));            }
+        });
+
 
         btnCam.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
        btnPost.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
+
+               // on some click or some loading we need to wait for...
+               ProgressBar pb = (ProgressBar) findViewById(R.id.pbLoading);
+               pb.setVisibility(ProgressBar.VISIBLE);
+
                String postBody = etDescription.getText().toString();
                if (postBody.isEmpty()){
                    Toast.makeText(MainActivity.this, "Description cannot be empty", Toast.LENGTH_SHORT).show();
@@ -76,6 +116,9 @@ public class MainActivity extends AppCompatActivity {
                }
                ParseUser currentUser = ParseUser.getCurrentUser();
                savePost(postBody,currentUser, photoFile);
+
+               // run a background job and once complete
+               pb.setVisibility(ProgressBar.INVISIBLE);
            }
        });
 
@@ -151,11 +194,20 @@ public class MainActivity extends AppCompatActivity {
                     Log.e(TAG, "Error saving Post ", e);
                     Toast.makeText(MainActivity.this, "Error saving Post ", Toast.LENGTH_SHORT).show();
                 }
-                Log.i(TAG,"Post saved Succesfully");
+                Log.i(TAG,"Post saved Successfully");
                 etDescription.setText("");
                 ivCam.setImageResource(0);
+
+                //TODO: Navigate to feed activity if the user is signed in properly
+                goFeedActivity();
+                Toast.makeText(MainActivity.this, "Post saved successfully", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+    private void goFeedActivity() {
+        Intent intent = new Intent(this, FeedActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void queryPosts() {

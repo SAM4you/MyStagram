@@ -55,8 +55,8 @@
         android:text="Sign-Up"
         android:layout_below="@id/etNPW"
         android:layout_marginTop="30dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginEnd="150dp"/>
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="130dp"/>
 
 
     <Button

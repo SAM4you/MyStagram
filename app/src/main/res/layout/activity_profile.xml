@@ -1,70 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical"
-    android:layout_alignParentStart="true"
-    android:layout_alignParentEnd="true">
+    tools:context=".ProfileActivity">
 
-    <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:hint="Your post"
-        android:layout_below="@id/toolbar"
-        android:minHeight="48dp"
-        android:padding="10dp" />
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCam"
-        android:src="@drawable/ic_baseline_photo_camera_24"
-        android:layout_marginStart="170dp"
-        android:layout_marginEnd="170dp"
-        android:layout_below="@+id/etDescription"
-        app:tint="#E9E91E63"
-        android:backgroundTint="#C3BBBB"/>
     <ImageView
+        android:id="@+id/ivProfile"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:id="@+id/ivCam"
-        android:layout_marginLeft="100dp" android:layout_marginRight="100dp"
-        android:layout_below="@+id/btnCam"
-        />
-    <Button
+        android:layout_height="150dp"
+        android:layout_marginTop="120dp"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        app:tint="#E9E91E63"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="55dp" />
+
+    <TextView
+        android:id="@+id/tvUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnPost"
+        android:layout_below="@id/ivProfile"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="0dp"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp"
+        tools:text="YOUR_NAME" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvUsername"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="50dp"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:textStyle="italic"
+        tools:text="youremail@example.com" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvEmail"
+        android:layout_margin="120dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#888383"
         android:clickable="true"
-        android:layout_below="@+id/ivCam"
-        android:layout_marginRight="130dp"
-        android:layout_marginLeft="130dp"
-        android:backgroundTint="#E9E91E63"
-        android:text="Post"/>
-
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        android:visibility="invisible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        android:textColor="#E91E63"
+        android:text="Logout" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        app:titleTextColor="@android:color/white"
-        android:backgroundTint="#E9E91E63"
         android:background="#FFFFFF"
+        android:backgroundTint="#E9E91E63"
+        android:minHeight="?attr/actionBarSize"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp">
+        android:paddingBottom="5dp"
+        app:titleTextColor="@android:color/white">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -129,7 +132,7 @@
             android:id="@+id/ibProfile"
             android:src="@drawable/ic_baseline_account_circle_24"
             android:layout_alignParentEnd="true"
-            android:clickable="true"
+            android:clickable="false"
             android:layout_marginEnd="20dp"
             app:tint="@color/white"
             android:backgroundTint="#E9E91E63"

@@ -60,7 +60,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
-        getSupportActionBar().hide();
+
     }
 
 
@@ -79,7 +79,7 @@ public class SignupActivity extends AppCompatActivity {
                 if (e == null) {
                     // Hooray! Let them use the app now, if sign-up properly.
                     Log.i(TAG, "User Sign up success" );
-                    goMainActivity();
+                    goFeedActivity();
                     Toast.makeText(SignupActivity.this, "SignUp Success!", Toast.LENGTH_SHORT).show();
 
                 } else {
@@ -93,8 +93,8 @@ public class SignupActivity extends AppCompatActivity {
 
 
     }
-    private void goMainActivity() {
-        Intent intent = new Intent(this, MainActivity.class);
+    private void goFeedActivity() {
+        Intent intent = new Intent(this, FeedActivity.class);
         startActivity(intent);
         finish();
     }
