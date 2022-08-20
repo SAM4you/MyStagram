@@ -55,10 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG,"onClick SignUp button");
-                //String username = etUsername.getText().toString();
-                //String password = etPassword.getText().toString();
-                //loginUser(username,password);
-
+                startActivity(new Intent(LoginActivity.this,SignupActivity.class));
             }
         });
         getSupportActionBar().hide();

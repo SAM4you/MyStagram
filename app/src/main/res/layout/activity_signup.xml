@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SignupActivity">
+
+    <TextView
+        android:id="@+id/tvCNA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="30dp"
+        android:text="Create new Account"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvCNA"
+        android:layout_margin="10dp"
+        android:hint="Your email address"
+        android:padding="15dp" />
+
+    <EditText
+        android:id="@+id/etNUN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEmail"
+        android:layout_margin="10dp"
+        android:hint="Create a Username"
+        android:padding="15dp" />
+
+    <EditText
+        android:id="@+id/etNPW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etNUN"
+        android:layout_margin="10dp"
+        android:hint="Create a new Password"
+        android:inputType="textPassword"
+        android:padding="15dp" />
+
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sign-Up"
+        android:layout_below="@id/etNPW"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"/>
+
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:textColor="@color/purple_700"
+        android:backgroundTint="@color/white"
+        android:layout_below="@+id/tvHA"
+        android:layout_marginStart="150dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvHA"
+        android:text="Already have an Account?"
+        android:layout_below="@+id/btnSignUp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:textSize="18sp"/>
+
+
+</RelativeLayout>
