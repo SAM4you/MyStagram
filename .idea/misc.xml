@@ -5,14 +5,19 @@
       <map>
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.137" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
+        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/drawable/selector_button_bg.xml" value="0.1" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.17637215528781794" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout-w936dp/activity_login.xml" value="0.1721311475409836" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/activity_feed.xml" value="0.1693840579710145" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/activity_login.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/activity_profile.xml" value="0.264" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/activity_signup.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/fragment_compose.xml" value="0.2" />
+        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/fragment_feed.xml" value="0.2604166666666667" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/item_feed.xml" value="0.264" />
+        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/layout/item_post.xml" value="0.328719723183391" />
+        <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/menu/menu_bottom_navigation.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/lonelyness/AndroidStudioProjects/MyStagram/app/src/main/res/xml/fileprovider.xml" value="0.22826086956521738" />
       </map>
     </option>

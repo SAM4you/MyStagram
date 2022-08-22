@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         if (ParseUser.getCurrentUser() !=null) {
-            goFeedActivity();
+            goMainActivity();
 
         }
 
@@ -72,14 +72,14 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
                 //TODO: Navigate to feed activity if the user is signed in properly
-                goFeedActivity();
+                goMainActivity();
                 Toast.makeText(LoginActivity.this, "Login Success!", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-    private void goFeedActivity() {
-        Intent intent = new Intent(this, FeedActivity.class);
+    private void goMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
 

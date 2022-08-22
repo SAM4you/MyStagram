@@ -11,50 +11,6 @@
     android:layout_alignParentStart="true"
     android:layout_alignParentEnd="true">
 
-    <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:hint="Your post"
-        android:layout_below="@id/toolbar"
-        android:minHeight="48dp"
-        android:padding="10dp" />
-    <ImageButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnCam"
-        android:src="@drawable/ic_baseline_photo_camera_24"
-        android:layout_marginStart="170dp"
-        android:layout_marginEnd="170dp"
-        android:layout_below="@+id/etDescription"
-        app:tint="#E9E91E63"
-        android:backgroundTint="#C3BBBB"/>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:id="@+id/ivCam"
-        android:layout_marginLeft="100dp" android:layout_marginRight="100dp"
-        android:layout_below="@+id/btnCam"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPost"
-        android:clickable="true"
-        android:layout_below="@+id/ivCam"
-        android:layout_marginRight="130dp"
-        android:layout_marginLeft="130dp"
-        android:backgroundTint="#E9E91E63"
-        android:text="Post"/>
-
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        android:visibility="invisible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:minHeight="?attr/actionBarSize"
@@ -70,70 +26,38 @@
             android:layout_height="match_parent"
             android:src="@drawable/icon_app"
             android:layout_marginEnd="120dp"/>
+
         <ImageButton
+            android:id="@+id/ibMessages"
             android:layout_width="wrap_content"
             android:layout_height="48dp"
-            android:padding="10dp"
-            android:id="@+id/ibMessages"
-            android:src="@drawable/ic_message_tab"
-            android:clickable="true"
             android:layout_marginLeft="50dp"
             android:layout_marginEnd="20dp"
-            app:tint="@color/white"
+            android:background="#E9E91E63"
             android:backgroundTint="#E9E91E63"
-            android:background="#E9E91E63"/>
+            android:clickable="false"
+            android:contentDescription="@string/dm_tab"
+            android:padding="10dp"
+            android:src="@drawable/ic_message_tab"
+            app:tint="@color/white" />
     </androidx.appcompat.widget.Toolbar>
 
-    <RelativeLayout
-        android:id="@+id/bottom"
-        android:layout_alignParentBottom="true"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:paddingTop="5dp"
-        android:paddingBottom="10dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#E91E63"
-        android:background="#E91E63">
+        android:layout_height="match_parent"
+        android:id="@+id/flContainer"
+        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/bottomNavigation"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:id="@+id/ibHome"
-            android:clickable="false"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_baseline_home_24"
-            app:tint="@color/white"
-            android:background="#E9E91E63"
-            />
-        <ImageButton
-            android:id="@+id/ibCompose"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_toEndOf="@+id/ibHome"
-            android:layout_toStartOf="@+id/ibProfile"
-            android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp"
-            android:src="@drawable/ic_compose"
-            android:clickable="true"
-            app:tint="@color/white"
-            android:background="#E9E91E63"
-            android:textSize="18sp" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:padding="10dp"
-            android:id="@+id/ibProfile"
-            android:src="@drawable/ic_baseline_account_circle_24"
-            android:layout_alignParentEnd="true"
-            android:clickable="true"
-            android:layout_marginEnd="20dp"
-            app:tint="@color/white"
-            android:backgroundTint="#E9E91E63"
-            android:background="#E9E91E63"/>
-    </RelativeLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="#E9E91E63"
+        android:backgroundTint="#E9E91E63"
+        app:menu="@menu/menu_bottom_navigation"
+        app:itemIconTint="@color/white"/>
 
 </RelativeLayout>
