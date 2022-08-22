@@ -32,6 +32,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.ander.mystagram.fragments.ComposeFragment;
 import com.ander.mystagram.fragments.FeedFragment;
+import com.ander.mystagram.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.parse.FindCallback;
@@ -87,7 +88,6 @@ public class MainActivity extends AppCompatActivity {
                Fragment fragment = new Fragment();
                switch (item.getItemId()) {
                    case R.id.action_home:
-                       // TODO : Update fragment
                        Toast.makeText(MainActivity.this, "Feed", Toast.LENGTH_SHORT).show();
                        fragment = new FeedFragment();
                        break;
@@ -100,9 +100,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                    case R.id.action_profile:
-                       //TODO: Update fragment
                        Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
-                       fragment = new ComposeFragment();
+                       fragment = new ProfileFragment();
                        break;
                }
                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();

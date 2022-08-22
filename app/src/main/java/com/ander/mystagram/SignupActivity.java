@@ -79,8 +79,8 @@ public class SignupActivity extends AppCompatActivity {
                 if (e == null) {
                     // Hooray! Let them use the app now, if sign-up properly.
                     Log.i(TAG, "User Sign up success" );
-                    goFeedActivity();
-                    Toast.makeText(SignupActivity.this, "SignUp Success!", Toast.LENGTH_SHORT).show();
+                    goMainActivity();
+                    Toast.makeText(SignupActivity.this, "SignUp Success, Welcome!", Toast.LENGTH_SHORT).show();
 
                 } else {
                     // Sign up didn't succeed. Look at the ParseException
@@ -93,8 +93,8 @@ public class SignupActivity extends AppCompatActivity {
 
 
     }
-    private void goFeedActivity() {
-        Intent intent = new Intent(this, FeedActivity.class);
+    private void goMainActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }

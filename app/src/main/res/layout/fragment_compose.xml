@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ComposeFragment">
+
+    <EditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:hint="Your post"
+        android:minHeight="48dp"
+        android:padding="10dp" />
+
+    <ImageButton
+        android:id="@+id/btnCam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etDescription"
+        android:layout_marginStart="170dp"
+        android:layout_marginEnd="170dp"
+        android:backgroundTint="#C3BBBB"
+        android:contentDescription="@string/captured_image"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_baseline_photo_camera_24"
+        app:tint="#E9E91E63" />
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/ivCam"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_below="@+id/btnCam"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnPost"
+        android:clickable="true"
+        android:layout_below="@+id/ivCam"
+        android:layout_marginRight="130dp"
+        android:layout_marginLeft="130dp"
+        android:backgroundTint="#E9E91E63"
+        android:text="Post"/>
+
+    <ProgressBar
+        android:id="@+id/pbLoading"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
