@@ -58,6 +58,6 @@
         android:background="#E9E91E63"
         android:backgroundTint="#E9E91E63"
         app:menu="@menu/menu_bottom_navigation"
-        app:itemIconTint="@color/white"/>
+        app:itemIconTint="@drawable/button_state"/>
 
 </RelativeLayout>
