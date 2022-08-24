@@ -1,13 +1,14 @@
 package com.ander.mystagram.fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,12 +19,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ander.mystagram.LoginActivity;
+import com.ander.mystagram.MyPostsAdapter;
 import com.ander.mystagram.Post;
-import com.ander.mystagram.PostAdapter;
 import com.ander.mystagram.R;
-import com.ander.mystagram.User;
+import com.bumptech.glide.Glide;
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseFile;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -39,14 +41,16 @@ public class MyAccountFragment extends Fragment {
 
     public static final String TAG ="AccountFragment";
 
-    private User user;
-    private ImageView ivProfileImage;
+    private ParseUser user;
+    protected ImageView ivProfileImage;
     private TextView tvScreenName;
-    private TextView tvBio; //Coming Soon
+    private TextView tvEmail; //To implement later
+    private TextView tvBio; //To Implement later
     private Button btnLogout;
     private RecyclerView rvFeed;
-    protected PostAdapter adapter;
+    protected MyPostsAdapter adapter;
     protected List<Post> postList;
+    Context context;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -100,12 +104,18 @@ public class MyAccountFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ivProfileImage = view.findViewById(R.id.ivProfileImage);
         tvScreenName = view.findViewById(R.id.tvScreenName);
-        tvBio = view.findViewById(R.id.tvBio);
+        //tvEmail = view.findViewById(R.id.tvEmail);
         btnLogout = view.findViewById(R.id.btnLogout);
         rvFeed = view.findViewById(R.id.rvFeed);
 
 
+
+        //ParseUser currentUser;
+
+
         tvScreenName.setText(ParseUser.getCurrentUser().getUsername());
+        //tvEmail.setText(ParseUser.getCurrentUser().getEmail());
+
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,13 +131,15 @@ public class MyAccountFragment extends Fragment {
         postList = new ArrayList<>();
 
         // Create Adapter
-        adapter = new PostAdapter(getContext(), postList);
+        adapter = new MyPostsAdapter(getContext(), postList);
 
         // Set the Adapter
         rvFeed.setAdapter(adapter);
 
         // Set Layout Manager
-        rvFeed.setLayoutManager(new LinearLayoutManager(getContext()));
+        StaggeredGridLayoutManager gridLayoutManager =
+                new StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+        rvFeed.setLayoutManager(gridLayoutManager);
 
         queryPosts();
 

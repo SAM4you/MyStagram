@@ -12,17 +12,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.parse.ParseFile;
-import com.parse.ParseUser;
 
+import java.lang.annotation.Target;
 import java.util.List;
 
-public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
+public class MyPostsAdapter extends RecyclerView.Adapter<MyPostsAdapter.ViewHolder> {
 
     private Context context;
     private List<Post> posts;
 
 
-    public PostAdapter (Context context, List<Post> posts){
+    public MyPostsAdapter (Context context, List<Post> posts){
         this.context = context;
         this.posts = posts;
     }
@@ -30,8 +30,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_post, parent, false);
-        return new ViewHolder(view);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_mypost, parent, false);
+        return new MyPostsAdapter.ViewHolder(view);
     }
 
     @Override
@@ -58,28 +58,27 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView ivScreenProfile;
-        private TextView tvScreenName;
+        //private TextView tvScreenName;
         private ImageView ivPostImage;
-        private TextView tvPostBody;
+        //private TextView tvPostBody;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivScreenProfile = itemView.findViewById(R.id.ivScreenProfile);
-            tvScreenName = itemView.findViewById(R.id.tvScreenName);
+           // tvScreenName = itemView.findViewById(R.id.tvScreenName);
             ivPostImage = itemView.findViewById(R.id.ivPostImage);
-            tvPostBody = itemView.findViewById(R.id.tvPostBody);
+            //tvPostBody = itemView.findViewById(R.id.tvPostBody);
         }
 
         public void bind(Post post) {
-            tvPostBody.setText(post.getDescription());
-            tvScreenName.setText(post.getUser().getUsername());
-            //Glide.with(context).load(post.getUser().getParseFile(profileImage)).into(ivScreenProfile);
-
-
+           // tvPostBody.setText(post.getDescription());
+            //tvScreenName.setText(post.getUser().getUsername());
             ParseFile image = post.getImage();
             if (image != null){
-                Glide.with(context).load(image.getUrl()).placeholder(R.drawable.placeholder).into(ivPostImage);
+                Glide.with(context)
+                        .load(image.getUrl())
+                        .placeholder(R.drawable.placeholder)
+                        .override(300, 300)
+                        .into(ivPostImage);
             }
 
 

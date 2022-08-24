@@ -8,6 +8,9 @@ public class User extends com.parse.ParseUser {
     public static final String KEY_EMAIL = "email";
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_USERNAME = "username";
+    public static final String KEY_BIO = "bio";
+    public static final String KEY_PROFILE_IMAGE = "profileImage";
+
 
     public String getEmail(){
         return getString(KEY_EMAIL);
@@ -28,6 +31,20 @@ public class User extends com.parse.ParseUser {
     }
     public void setUsername(String username) {
         put(KEY_USERNAME, username);
+    }
+
+    public String getBio(){
+        return getString(KEY_BIO);
+    }
+    public void setBio(String bio) {
+        put(KEY_BIO, bio);
+    }
+
+    public ParseFile getProfileImage(){
+        return getParseFile(KEY_PROFILE_IMAGE);
+    }
+    public void setProfileImage(ParseFile profileImage) {
+        put(KEY_PROFILE_IMAGE, profileImage);
     }
 
 

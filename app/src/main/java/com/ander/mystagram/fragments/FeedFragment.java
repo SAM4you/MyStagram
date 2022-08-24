@@ -132,8 +132,10 @@ public class FeedFragment extends Fragment {
                 } for (Post post : posts) {
                     Log.i(TAG, "Post: "+ post.getDescription() + ", username: " + post.getUser().getUsername());
                 }
+                postList.clear();
                 postList.addAll(posts);
                 adapter.notifyDataSetChanged();
+                swipeContainer.setRefreshing(false);
 
             }
         });

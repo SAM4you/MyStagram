@@ -26,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.ander.mystagram.LoginActivity;
 import com.ander.mystagram.MainActivity;
 import com.ander.mystagram.Post;
 import com.ander.mystagram.R;
@@ -58,7 +59,7 @@ public class ComposeFragment extends Fragment {
     ImageButton btnCam;
     ImageView ivCam;
     Button btnPost;
-    ProgressBar progressBar;
+
 
      private File photoFile;
      public String photoFileName = "photo.jpg";
@@ -133,24 +134,34 @@ public class ComposeFragment extends Fragment {
 
                 // on some click or some loading we need to wait for...
                 ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.pbLoading);
-                progressBar.setVisibility(ProgressBar.VISIBLE);
+
 
                 String postBody = etDescription.getText().toString();
+
                 if (postBody.isEmpty()){
+                    //progressBar.setVisibility(View.INVISIBLE);
                     Toast.makeText(getContext(), "Description cannot be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (photoFile == null || ivCam.getDrawable() == null){
                     Toast.makeText(getContext(), "No image is attached", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                ParseUser currentUser = ParseUser.getCurrentUser();
-                savePost(postBody,currentUser, photoFile);
 
                 // run a background job and once complete
-                progressBar.setVisibility(ProgressBar.INVISIBLE);
+                ParseUser currentUser = ParseUser.getCurrentUser();
+                savePost(postBody,currentUser, photoFile);
+                progressBar.setVisibility(View.VISIBLE);
+
             }
         });
     }
+
+     private void goFeedFragment() {
+             Intent intent = new Intent(getContext(), MainActivity.class);
+             startActivity(intent);
+     }
+
      private void launchCamera() {
          // create Intent to take a picture and return control to the calling application
          Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -213,6 +224,8 @@ public class ComposeFragment extends Fragment {
          post.setImage(new ParseFile(photoFile));
          post.setUser(currentUser);
          post.saveInBackground(new SaveCallback() {
+
+
              @Override
              public void done(ParseException e) {
                  if (e != null) {
@@ -222,7 +235,8 @@ public class ComposeFragment extends Fragment {
                  Log.i(TAG,"Post saved Successfully");
                  etDescription.setText("");
                  ivCam.setImageResource(0);
-                 Toast.makeText(getContext(), "Post Saved Successfully", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(getContext(), "Post Success", Toast.LENGTH_SHORT).show();
+                 goFeedFragment();
              }
          });
      }

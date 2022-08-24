@@ -7,7 +7,7 @@
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="36dp"
         android:src="@drawable/ic_baseline_account_circle_24"
         android:id="@+id/ivScreenProfile"
         android:layout_alignParentStart="true"
@@ -23,23 +23,62 @@
         android:textSize="16sp"
         android:textStyle="bold"
         tools:text="SAM4you"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:layout_marginStart="8dp"/>
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ivPostImage"
-        android:layout_below="@+id/tvScreenName"
-        android:layout_toEndOf="@id/ivScreenProfile"
-        android:layout_marginEnd="15dp"
-        />
+        android:layout_below="@+id/ivScreenProfile"/>
+
+    <ImageButton
+        android:id="@+id/pLike"
+        android:src="@drawable/like"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/ivPostImage"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"/>
+
+    <ImageButton
+        android:id="@+id/pMsg"
+        android:src="@drawable/comment"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/ivPostImage"
+        android:clickable="false"
+        android:layout_toEndOf="@id/pLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <ImageButton
+        android:src="@drawable/send"
+        android:id="@+id/pSend"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/ivPostImage"
+        android:layout_toEndOf="@id/pMsg"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:rotation="-45"
+        android:layout_height="22dp"
+        android:layout_marginTop="6dp"/>
+
+    <ImageButton
+        android:src="@drawable/turnedin"
+        android:id="@+id/pTurnedin"
+        android:backgroundTint="@color/white"
+        android:layout_below="@id/ivPostImage"
+        android:clickable="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"/>
 
     <TextView
         android:id="@+id/tvPostBody"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ivPostImage"
-        android:layout_toEndOf="@id/ivScreenProfile"
+        android:layout_below="@+id/pSend"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
         android:textSize="14sp"
         tools:text="Hello Guys Happy to be a Developer" />
 
