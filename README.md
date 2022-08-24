@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/SAM4you/MyStagram/blob/main/MyStagramWalkthrough.gif' title='Video Walkthrough' width='360' alt='Video Walkthrough' /> <img src='https://github.com/SAM4you/MyStagram/blob/main/MyStagramWalkthrough%20-1.gif' title='Video Walkthrough' width='305' alt='Video Walkthrough' />
+<img src='https://github.com/SAM4you/MyStagram/blob/main/MyStagramWalkthrough.gif' title='Video Walkthrough' width='360' alt='Video Walkthrough' /> <img src='https://github.com/SAM4you/MyStagram/blob/main/MyStagramWalkthrough%20-1.gif' title='Video Walkthrough' width='305' alt='Video Walkthrough' /> 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
