@@ -5,6 +5,8 @@ import com.parse.ParseFile;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.sql.Date;
+
 @ParseClassName("Post")
 public class Post extends ParseObject {
 
@@ -33,5 +35,8 @@ public class Post extends ParseObject {
     public void setUser(ParseUser user) {
         put(KEY_USER, user);
     }
+
+    public Date getUpdatedAt() { return (Date) getDate(KEY_UPDATED_AT);}
+    public void setUpdatedAt(Date updatedAt) {put(KEY_UPDATED_AT, updatedAt);}
 
 }

@@ -88,6 +88,7 @@ public class FeedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvFeed = view.findViewById(R.id.rvFeed);
+
         swipeContainer = view.findViewById(R.id.swipeContainer);
         // Configure the refreshing colors
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
@@ -121,7 +122,7 @@ public class FeedFragment extends Fragment {
         ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
         query.include(Post.KEY_USER);
         query.setLimit(20);
-        query.addDescendingOrder(Post.KEY_UPDATED_AT);
+        //query.addDescendingOrder(Post.KEY_UPDATED_AT);
         // Specify the object id
         query.findInBackground(new FindCallback<Post>() {
             @Override

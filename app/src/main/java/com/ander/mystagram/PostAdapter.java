@@ -58,14 +58,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView ivScreenProfile;
+        //private ImageView ivScreenProfile;
         private TextView tvScreenName;
         private ImageView ivPostImage;
         private TextView tvPostBody;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            ivScreenProfile = itemView.findViewById(R.id.ivScreenProfile);
+            //ivScreenProfile = itemView.findViewById(R.id.ivScreenProfile);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             ivPostImage = itemView.findViewById(R.id.ivPostImage);
             tvPostBody = itemView.findViewById(R.id.tvPostBody);
