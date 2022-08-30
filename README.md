@@ -28,13 +28,13 @@ The following **additional** features are implemented:
 
 The following **required** functionality is completed:
 
-- [X] User can view 20 random posts submitted to "MyStagram".
+- [X] User can view the last 20 posts submitted to "MyStagram".
 - [X] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
 - [X] User can pull to refresh the last 20 posts submitted to "MyStagram".
 
 The following **optional** features are implemented:
 
-- [ ] User sees app icon in home screen and styled bottom navigation view
+- [X] User sees app icon in home screen and styled bottom navigation view
 - [X] Style the feed to look like the real Instagram feed.
 - [ ] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [ ] Show the username and creation time for each post.
