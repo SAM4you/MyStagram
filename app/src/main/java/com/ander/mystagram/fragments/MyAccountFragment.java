@@ -22,6 +22,7 @@ import com.ander.mystagram.LoginActivity;
 import com.ander.mystagram.MyPostsAdapter;
 import com.ander.mystagram.Post;
 import com.ander.mystagram.R;
+import com.ander.mystagram.User;
 import com.bumptech.glide.Glide;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -41,7 +42,7 @@ public class MyAccountFragment extends Fragment {
 
     public static final String TAG ="AccountFragment";
 
-    private ParseUser user;
+    private ParseUser currentUser;
     protected ImageView ivProfileImage;
     private TextView tvScreenName;
     private TextView tvEmail; //To implement later
@@ -51,6 +52,8 @@ public class MyAccountFragment extends Fragment {
     protected MyPostsAdapter adapter;
     protected List<Post> postList;
     Context context;
+
+    User user;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -104,17 +107,19 @@ public class MyAccountFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         ivProfileImage = view.findViewById(R.id.ivProfileImage);
         tvScreenName = view.findViewById(R.id.tvScreenName);
-        //tvEmail = view.findViewById(R.id.tvEmail);
+        tvEmail = view.findViewById(R.id.tvEmail);
+        //tvBio = view.findViewById(R.id.tvBio);
         btnLogout = view.findViewById(R.id.btnLogout);
         rvFeed = view.findViewById(R.id.rvFeed);
 
 
 
-        //ParseUser currentUser;
+        ParseUser currentUser;
 
 
         tvScreenName.setText(ParseUser.getCurrentUser().getUsername());
-        //tvEmail.setText(ParseUser.getCurrentUser().getEmail());
+        tvEmail.setText(ParseUser.getCurrentUser().getEmail());
+        //tvBio.setText(ParseUser.getCurrentUser().get());
 
 
         btnLogout.setOnClickListener(new View.OnClickListener() {

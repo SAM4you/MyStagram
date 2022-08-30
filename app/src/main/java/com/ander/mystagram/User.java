@@ -9,7 +9,7 @@ public class User extends com.parse.ParseUser {
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_BIO = "bio";
-    public static final String KEY_PROFILE_IMAGE = "profileImage";
+    public static final String KEY_PROFILE_IMAGE = "profilePhoto";
 
 
     public String getEmail(){

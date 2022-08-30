@@ -31,47 +31,26 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
 
 
-        /*ibHome = findViewById(R.id.ibHome);
-        ibProfile = findViewById(R.id.ibProfile);*/
-
-
-
-       /* ibHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.i(TAG,"Navigating to FeedActivity");
-                startActivity(new Intent(MainActivity.this,FeedActivity.class));
-            }
-        });
-        ibProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Sorry, this option is not yet fully implemented", Toast.LENGTH_SHORT).show();
-                Log.i(TAG,"Navigating to ProfileActivity");
-                startActivity(new Intent(MainActivity.this,ProfileActivity.class));            }
-        });
-
-
-        */
-       bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+       bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
            @Override
            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-               Fragment fragment = new Fragment();
+               Fragment fragment;
+
                switch (item.getItemId()) {
                    case R.id.action_home:
-                       Toast.makeText(MainActivity.this, "Feed", Toast.LENGTH_SHORT).show();
+                   default:
+                      // Toast.makeText(MainActivity.this, "Feed", Toast.LENGTH_SHORT).show();
                        fragment = new FeedFragment();
-                       break;
+                        break;
 
                    case R.id.action_compose:
                        // Something Happens
-                       Toast.makeText(MainActivity.this, "Compose", Toast.LENGTH_SHORT).show();
+                      // Toast.makeText(MainActivity.this, "Compose", Toast.LENGTH_SHORT).show();
                        fragment = new ComposeFragment();
                        break;
 
-
                    case R.id.action_profile:
-                       Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
+                      // Toast.makeText(MainActivity.this, "Profile", Toast.LENGTH_SHORT).show();
                        fragment = new MyAccountFragment();
                        break;
                }
@@ -80,14 +59,8 @@ public class MainActivity extends AppCompatActivity {
            }
        });
 
-       //Set default Selection
-        bottomNavigationView.setSelectedItemId(R.id.action_home);
-
-
 
     }
-
-
 
 
 }

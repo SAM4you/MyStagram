@@ -14,8 +14,8 @@ public class MyStagramApp extends Application {
         ParseObject.registerSubclass(Post.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
-                .applicationId("WIdGgiLi2Odb5DpfyfiBhWWStuozMdQsl619AV9j")
-                .clientKey("InCCGuM7Y6I0Opmv2u5SarGZcsx9riYfuKSHDWpI")
+                .applicationId("JwmyBRR3btaolZhRwZi1UC8hk7uVx2zlqsjvQeWk")
+                .clientKey("nlyj3Fn2QrlwdxVBROr98NrLhXgn31wtjF82E61Y")
                 .server("https://parseapi.back4app.com")
                 .build()
         );

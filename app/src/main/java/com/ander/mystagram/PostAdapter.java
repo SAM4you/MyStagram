@@ -58,14 +58,14 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        //private ImageView ivScreenProfile;
+        private ImageView ivScreenProfile;
         private TextView tvScreenName;
         private ImageView ivPostImage;
         private TextView tvPostBody;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            //ivScreenProfile = itemView.findViewById(R.id.ivScreenProfile);
+            ivScreenProfile = itemView.findViewById(R.id.ivScreenProfile);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
             ivPostImage = itemView.findViewById(R.id.ivPostImage);
             tvPostBody = itemView.findViewById(R.id.tvPostBody);
@@ -74,15 +74,11 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         public void bind(Post post) {
             tvPostBody.setText(post.getDescription());
             tvScreenName.setText(post.getUser().getUsername());
-            //Glide.with(context).load(post.getUser().getParseFile(profileImage)).into(ivScreenProfile);
-
 
             ParseFile image = post.getImage();
             if (image != null){
-                Glide.with(context).load(image.getUrl()).placeholder(R.drawable.placeholder).into(ivPostImage);
+                Glide.with(context).load(image.getUrl()).fitCenter().placeholder(R.drawable.placeholder).into(ivPostImage);
             }
-
-
         }
     }
 }

@@ -125,8 +125,7 @@ public class ComposeFragment extends Fragment {
                 launchCamera();
             }
         });
-
-        //queryPosts();
+        queryPosts();
 
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -240,7 +239,7 @@ public class ComposeFragment extends Fragment {
              }
          });
      }
-    /* private void queryPosts() {
+     private void queryPosts() {
          // Specify which class to query
          ParseQuery<Post> query = ParseQuery.getQuery(Post.class);
          query.include(Post.KEY_USER);
@@ -257,5 +256,5 @@ public class ComposeFragment extends Fragment {
 
              }
          });
-     }*/
+     }
 }

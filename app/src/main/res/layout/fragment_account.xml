@@ -43,6 +43,15 @@
             android:layout_toEndOf="@id/ivProfileImage"
             android:textSize="16sp"
             tools:text="youremail@example.com" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvBio"
+            android:layout_toEndOf="@id/ivProfileImage"
+            android:layout_marginStart="25dp"
+            android:layout_above="@id/btnLogout"
+            android:layout_below="@id/tvEmail"
+            tools:text="Life can be hard, but, never forget to code" />
 
         <Button
             android:id="@+id/btnLogout"
