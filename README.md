@@ -2,7 +2,7 @@
 
 **MyStagram** is a photo sharing app similar to Instagram but using Parse as its backend.
 
-Time spent: **11** hours spent in total
+Time spent: **15** hours spent in total
 
 ## Part 1 User Stories
 
@@ -28,9 +28,9 @@ The following **additional** features are implemented:
 
 The following **required** functionality is completed:
 
-- [X] User can view the last 20 posts submitted to "Instagram".
+- [X] User can view 20 random posts submitted to "MyStagram".
 - [X] The user should switch between different tabs - viewing all posts (feed view), compose (capture photos form camera) and profile tabs (posts made) using fragments and a Bottom Navigation View. (2 points)
-- [X] User can pull to refresh the last 20 posts submitted to "Instagram".
+- [X] User can pull to refresh the last 20 posts submitted to "MyStagram".
 
 The following **optional** features are implemented:
 
